@@ -1,0 +1,45 @@
+<div class="container-fluid" style="min-height: 50vh">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="text-dark">Галузі</h1>
+
+            <div class="text-right">
+                <a href="/create" class="btn btn-info btn-sm my-2">Додати запис</a>             
+            </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr class="text-dark table-dark">
+                            <th scope="col" ></th>
+                            <th scope="col" ></th>
+                            <th scope="col" >Код галузі</th>
+                            <th scope="col" >Назва</th>
+                            <th scope="col" >Опис</th>
+                        </tr>
+                        {{#each galuzi}}
+                        <tr class="text-dark">
+                            <td>
+                                <form action="delete/{{this.id_galuzi}}" method="POST" style="display: inline;">
+                                    <input type="submit" value="Видалити" class="btn btn-danger btn-sm">
+                                </form>
+                            </td>
+                            <td>
+                                <a href="/edit/{{this.id_galuzi}}" class="btn btn-success btn-sm">Редагувати</a>
+                            </td>
+                            <td>
+                                {{this.id_galuzi}}
+                            </td>
+                            <td>
+                                {{this.nazva_galuzi}}
+                            </td>
+                            <td>
+                                {{this.opys}}
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

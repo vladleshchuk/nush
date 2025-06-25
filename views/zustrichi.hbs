@@ -1,0 +1,72 @@
+<div class="container-fluid" style="min-height: 50vh">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="text-dark">Зустрічі</h1>
+        </div>
+    </div>
+
+    {{#if zustrichi_visible}}
+    <div class="row">
+        <div class="col-12 text-center">
+            <h2 class="text-dark">з: {{data_pochatku}} по: {{data_zakinchennya}}</h2>
+        </div>
+    </div>
+    {{else}}
+    <div class="row">
+        <div class="col-12">
+        <form method="post" class="form-inline my-2">
+            <div class="form-group mx-auto">
+                <div class="form-group">
+                    <label for="data_pochatku">з</label>
+                    <input type="date" class="form-control mx-2" name="data_pochatku">
+                </div>
+                <div class="form-group">
+                    <label for="data_zakinchennya">по</label>
+                    <input type="date" class="form-control mx-2" name="data_zakinchennya">
+                </div>
+                <button type="submit" class="btn btn-primary">Показати</button>
+            </div>
+        </form>
+        </div>
+    </div>
+    {{/if}}
+
+
+
+
+
+
+    {{#if zustrichi_visible}}
+    
+    <div class="text-right">
+        <a href="/zustrichi_create" class="btn btn-info btn-sm my-2">Додати запис</a>
+    </div>
+
+
+    <div class="row">
+        
+        {{#each zustrichi}}
+        
+        <div class="card text-center col-md-6">
+            <div class="card-header">Код зустрічі: <b>{{this.id_zustrichi}}</b></div>
+        <div class="card-body">
+                <h5 class="card-title">{{this.nazva_zustrichi}}</h5>
+                <p class="card-text">Спікер: <b>{{this.prizvyshche}}</b></p>
+                <p class="card-text">{{this.data_pochatku}} - {{this.data_zakinchennya}}</p>
+                <p class="card-text">Тривалість: <b>{{this.truvalist}} дн.</b></p>
+            </div>
+            <div class="card-footer text-muted">
+                <form action="zustrichi_delete/{{this.id_zustrichi}}" method="POST" style="display:inline;">
+                            <input type="submit" value="Видалити" class="btn btn-danger btn-sm"/>
+                </form>
+            </a>
+                <a href="/zustrichi_edit/{{this.id_zustrichi}}" class="btn bg-success btn-sm">Редагувати</a>
+            </div>
+        </div>
+
+        {{/each}}
+    </div>
+
+    {{/if}}
+
+</div>

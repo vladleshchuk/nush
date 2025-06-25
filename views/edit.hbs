@@ -1,0 +1,25 @@
+<div class="container" style="min-height: 50vh">
+    <div class="row">
+        <div class="col-6 text-center mx-auto">
+            <h2 class="text-dark">Галузь
+                &#8220;{{galuzi.nazva_galuzi}}&#8221;
+                (редагування)
+            </h2>
+            <form action="/edit" method="post">
+                <input type="hidden" name="id_galuzi" value="{{galuzi.id_galuzi}}" />
+                <div class="form-group">
+                    <label for="nazva_galuzi">Назва галузі</label>
+                    <input type="text" class="form-control" name="nazva_galuzi" placeholder="Введіть назву галузі"
+                           value="{{galuzi.nazva_galuzi}}">
+                </div>
+                <div class="form-group">
+                    <label for="opys">Опис</label>
+                    <input type="text" class="form-control" name="opys" placeholder="Введіть опис галузі"
+                           value="{{galuzi.opys}}">
+                </div>
+                <button type="submit" class="btn btn-dark mx-2 my-2">Зберегти</button>
+                <button type="reset" class="btn btn-dark">Очистити</button>
+            </form>
+        </div>
+    </div>
+</div>

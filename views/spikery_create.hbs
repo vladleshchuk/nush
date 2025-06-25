@@ -1,0 +1,37 @@
+<div class="container" style="min-height: 50vh">
+  <div class="row">
+    <div class="col-6 text-center mx-auto">
+        <h2 class="text-dark">Спікери <br> (новий запис)</h2>
+    <form method="post">
+    <div class="form-group">
+    <label for="id_galuzi">Галузі</label>
+    <input list="id" class="form-control" name="id_galuzi" 
+           placeholder="Виберіть галузь" autocomplete="off">
+    <datalist id="id">
+        {{#each galuzi}}
+        <option value="{{this.id_galuzi}}">
+            {{this.nazva_galuzi}}
+        </option>
+        {{/each}}
+    </datalist>
+</div>
+
+<div class="form-group">
+                    <label for="prizvyshche">Прізвище</label>
+                    <input type="text" class="form-control" name="prizvyshche" placeholder="Вкажіть прізвище">
+                </div>
+<div class="form-group">
+                    <label for="imya">Ім'я</label>
+                    <input type="text" class="form-control" name="imya" placeholder="Вкажіть ім'я">
+                </div>
+<div class="form-group">
+                    <label for="pobatkovi">По-батькові</label>
+                    <input type="text" class="form-control" name="pobatkovi" placeholder="Вкажіть по-батькові">
+                </div>
+                <button type="submit" class="btn btn-dark mx-2 my-2">Зберегти</button>
+                <button type="reset" class="btn btn-dark">Очистити</button>                
+</form>
+
+    </div>
+    </div>
+    </div>

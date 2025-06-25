@@ -1,0 +1,50 @@
+<div class="container" style="min-height: 50vh">
+    <div class="row">
+        <div class="col-6 text-center mx-auto">
+            <h2 class="text-dark">Спікер 
+                &#8220;{{spikery.prizvyshche}}&#8221; 
+                <br>(редагування)
+            </h2>
+
+            <form method="post" action="/spikery_edit">
+                <div class="form-group">
+                    <label for="id_galuzi">Галузі</label>
+                    <input list="id" class="form-control" name="id_galuzi" 
+                           placeholder="Виберіть галузь" autocomplete="off" 
+                           value="{{spikery.id_galuzi}}">
+                    <datalist id="id">
+                        {{#each galuzi}}
+                            <option value="{{this.id_galuzi}}">
+                                {{this.nazva_galuzi}}
+                            </option>
+                        {{/each}}
+                    </datalist>
+                </div>
+
+                <div class="form-group">
+                    <label for="prizvyshche">Прізвище</label>
+                    <input type="text" class="form-control" name="prizvyshche" 
+                           placeholder="Вкажіть прізвище" value="{{spikery.prizvyshche}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="imya">Ім'я</label>
+                    <input type="text" class="form-control" name="imya" 
+                           placeholder="Вкажіть ім'я" value="{{spikery.imya}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="pobatkovi">По-батькові</label>
+                    <input type="text" class="form-control" name="pobatkovi"
+                           placeholder="Введіть по-батькові" value="{{spikery.pobatkovi}}">
+                </div>
+
+                <input type="hidden" name="id_spikery" 
+                       value="{{spikery.id_spikery}}">
+
+                <button type="submit" class="btn btn-dark mx-2">Зберегти</button>
+                <button type="reset" class="btn btn-dark">Очистити</button>
+            </form>
+        </div>
+    </div>
+</div>

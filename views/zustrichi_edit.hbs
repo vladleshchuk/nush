@@ -1,0 +1,40 @@
+<div class="container" style="min-height: 50vh">
+  <div class="row">
+    <div class="col-6 text-center mx-auto">
+      <h2 class="text-dark">Зустрічі <br> (редагування)</h2>
+      <form method="post" action="/zustrichi_edit">
+        <div class="form-group">
+          <label for="id_spikery">Відповідальний</label>
+          <input list="id" class="form-control" name="id_spikery" placeholder="Вкажіть спікера"
+            autocomplete="off"
+            value="{{zustrichi.id_spikery}}">
+          <datalist id="id">
+            {{#each spikery}}
+            <option value="{{this.id_spikery}}">
+              {{this.prizvyshche}}
+            </option>
+            {{/each}}
+          </datalist>
+        </div>
+        <div class="form-group">
+          <label for="nazva_zustrichi">Назва зустрічі</label>
+          <input type="text" class="form-control" name="nazva_zustrichi" placeholder="Вкажіть назву"
+            value="{{zustrichi.nazva_zustrichi}}">
+        </div>
+        <div class="form-group">
+          <label for="data_pochatku">Дата початку</label>
+          <input type="date" class="form-control" name="data_pochatku" placeholder="Початок"
+            value="{{zustrichi.data_pochatku}}">
+        </div>
+        <div class="form-group">
+          <label for="data_zakinchennya">Дата закінчення</label>
+          <input type="date" class="form-control" name="data_zakinchennya" placeholder="Закінчення"
+            value="{{zustrichi.data_zakinchennya}}">
+        </div>
+        <input type="hidden" name="id_zustrichi" value="{{zustrichi.id_zustrichi}}" />
+        <button type="submit" class="btn btn-dark mx-2 my-2">Зберегти</button>
+        <button type="reset" class="btn btn-dark">Очистити</button>
+      </form>
+    </div>
+  </div>
+</div>
