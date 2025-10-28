@@ -2,6 +2,10 @@
 
 This is a web application designed for managing, scheduling, and tracking online meetings in the **New Ukrainian School (NUSH)** educational environment.
 
+New to this repository? Watch our step-by-step video guide to get started quickly.
+
+[**▶️ Watch the Video Guide on YouTube**] https://youtu.be/qmqh8lZf9CU
+
 ## 🌐 Technologies Used
 
 - Node.js
